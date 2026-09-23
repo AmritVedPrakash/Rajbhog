@@ -12,6 +12,7 @@ function Navbar() {
   const navLinks = [
     { name: "Home", to: "/" },
     { name: "About", to: "/about-us" },
+    { name: "Brands", to: "/brands" },
     { name: "Contact Us", to: "/contact-us" },
   ];
 
