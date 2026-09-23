@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "./assets/theme.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #1f1630;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #7c3aed;
+  color: white;
+}

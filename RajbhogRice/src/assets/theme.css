@@ -1,0 +1,16 @@
+@theme {
+  --color-primary: #7c3aed;
+  --color-primary-dark: #5b21b6;
+  --color-primary-light: #a855f7;
+  --color-primary-soft: #f3e8ff;
+
+  --color-secondary: #ec4899;
+  --color-dark: #12081f;
+  --color-dark-soft: #211132;
+
+  --color-text-main: #1f1630;
+  --color-text-muted: #6b6179;
+  --color-border-soft: #eadcff;
+
+  --font-sans: "Poppins", sans-serif;
+}
