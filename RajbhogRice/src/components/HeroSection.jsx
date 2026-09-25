@@ -17,7 +17,7 @@ export default function HeroSection() {
       setCurrentIndex((prevIndex) => {
         return (prevIndex + 1) % images.length;
       });
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
