@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -38,12 +39,18 @@ export default function ContactUs() {
       className="
         relative
         w-full
-        min-h-screen
+        min-h-[calc(100vh-80px)]
         overflow-hidden
         bg-transparent
-        py-16
-        sm:py-20
-        lg:py-24
+
+        pt-[95px]
+        pb-12
+
+        sm:pt-[105px]
+        sm:pb-16
+
+        lg:pt-[115px]
+        lg:pb-24
       "
     >
       {/* =====================================================
@@ -51,7 +58,6 @@ export default function ContactUs() {
       ====================================================== */}
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-
         <motion.img
           src={RiceImage}
           alt=""
@@ -75,74 +81,84 @@ export default function ContactUs() {
           }}
           className="
             absolute
-            right-[-12%]
-            bottom-[-12%]
 
-            w-[480px]
-            sm:w-[600px]
+            right-[-20%]
+            bottom-[-8%]
+
+            w-[300px]
+            sm:w-[480px]
+            md:w-[600px]
             lg:w-[780px]
 
             max-w-none
-
             object-contain
 
             rotate-[-8deg]
-
             blur-[1px]
           "
         />
 
-        {/* Soft golden glow */}
-
+        {/* Soft golden glow - top right */}
         <div
           className="
             absolute
-            top-[-180px]
-            right-[-120px]
+            top-[-150px]
+            right-[-150px]
 
-            w-[450px]
-            h-[450px]
+            w-[300px]
+            h-[300px]
+
+            sm:w-[400px]
+            sm:h-[400px]
+
+            lg:w-[450px]
+            lg:h-[450px]
 
             rounded-full
-
             bg-[#c8ad46]/10
-
-            blur-[120px]
+            blur-[100px]
+            lg:blur-[120px]
           "
         />
 
+        {/* Soft golden glow - bottom left */}
         <div
           className="
             absolute
-            bottom-[-150px]
-            left-[-150px]
+            bottom-[-120px]
+            left-[-120px]
 
-            w-[400px]
-            h-[400px]
+            w-[280px]
+            h-[280px]
+
+            sm:w-[350px]
+            sm:h-[350px]
+
+            lg:w-[400px]
+            lg:h-[400px]
 
             rounded-full
-
             bg-[#c8ad46]/8
-
-            blur-[110px]
+            blur-[90px]
+            lg:blur-[110px]
           "
         />
       </div>
-
 
       {/* =====================================================
           FLOATING GOLDEN PARTICLES
       ====================================================== */}
 
       <div className="absolute inset-0 pointer-events-none">
-
         {[...Array(14)].map((_, index) => (
           <motion.span
             key={index}
             className="
               absolute
-              w-[4px]
-              h-[11px]
+              w-[3px]
+              h-[8px]
+              sm:w-[4px]
+              sm:h-[11px]
               rounded-full
               bg-[#c8ad46]/40
             "
@@ -167,9 +183,7 @@ export default function ContactUs() {
             }}
           />
         ))}
-
       </div>
-
 
       {/* =====================================================
           MAIN CONTENT
@@ -179,28 +193,29 @@ export default function ContactUs() {
         className="
           relative
           z-10
-
+          w-full
           max-w-6xl
           mx-auto
 
-          px-5
-          sm:px-8
+          px-4
+          sm:px-6
+          md:px-8
           lg:px-10
         "
       >
-
         <div
           className="
             grid
+            grid-cols-1
             lg:grid-cols-[0.8fr_1.2fr]
 
-            gap-12
+            gap-10
+            sm:gap-12
             lg:gap-20
 
             items-center
           "
         >
-
           {/* =================================================
               LEFT SIDE
           ================================================= */}
@@ -222,49 +237,64 @@ export default function ContactUs() {
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1],
             }}
+            className="
+              text-center
+              lg:text-left
+              flex
+              flex-col
+              items-center
+              lg:items-start
+            "
           >
-
             {/* Label */}
 
             <div
               className="
                 flex
                 items-center
+                justify-center
+                lg:justify-start
+
                 gap-2
-                mb-5
+                mb-4
+                sm:mb-5
               "
             >
-
               <Sparkles
-                size={17}
-                className="text-[#b89d35]"
+                size={16}
+                className="text-[#b89d35] sm:w-[17px] sm:h-[17px]"
               />
 
               <span
                 className="
-                  text-sm
+                  text-xs
+                  sm:text-sm
+
                   font-semibold
                   uppercase
-                  tracking-[0.25em]
+
+                  tracking-[0.18em]
+                  sm:tracking-[0.25em]
+
                   text-[#a98e2e]
                 "
               >
                 Contact Us
               </span>
-
             </div>
-
 
             {/* Heading */}
 
             <h2
               className="
                 font-serif
-                text-4xl
+
+                text-[2.35rem]
                 sm:text-5xl
+                md:text-6xl
                 lg:text-6xl
 
-                leading-[1.05]
+                leading-[1.08]
 
                 font-medium
 
@@ -279,23 +309,29 @@ export default function ContactUs() {
               </span>
             </h2>
 
-
             {/* Golden divider */}
 
             <div
               className="
                 flex
                 items-center
-                gap-3
+                justify-center
+                lg:justify-start
 
-                mt-7
-                mb-7
+                gap-2
+                sm:gap-3
+
+                mt-6
+                mb-6
+
+                sm:mt-7
+                sm:mb-7
               "
             >
-
               <span
                 className="
-                  w-14
+                  w-10
+                  sm:w-14
                   h-[1px]
                   bg-[#b49a32]
                 "
@@ -303,8 +339,12 @@ export default function ContactUs() {
 
               <span
                 className="
-                  w-2
-                  h-2
+                  w-1.5
+                  h-1.5
+
+                  sm:w-2
+                  sm:h-2
+
                   rotate-45
                   bg-[#b49a32]
                 "
@@ -312,14 +352,13 @@ export default function ContactUs() {
 
               <span
                 className="
-                  w-14
+                  w-10
+                  sm:w-14
                   h-[1px]
                   bg-[#b49a32]
                 "
               />
-
             </div>
-
 
             {/* Description */}
 
@@ -327,10 +366,12 @@ export default function ContactUs() {
               className="
                 max-w-md
 
-                text-base
-                sm:text-lg
+                text-sm
+                sm:text-base
+                md:text-lg
 
-                leading-8
+                leading-7
+                sm:leading-8
 
                 text-[#173b2e]/70
               "
@@ -340,7 +381,6 @@ export default function ContactUs() {
               with our team. We would love to hear from you.
             </p>
 
-
             {/* Small badge */}
 
             <motion.div
@@ -348,11 +388,15 @@ export default function ContactUs() {
                 y: -3,
               }}
               className="
-                mt-8
+                mt-6
+                sm:mt-8
 
                 inline-flex
                 items-center
-                gap-3
+                justify-center
+
+                gap-2
+                sm:gap-3
 
                 rounded-full
 
@@ -361,19 +405,25 @@ export default function ContactUs() {
 
                 bg-white/20
 
-                px-5
-                py-3
+                px-4
+                sm:px-5
+
+                py-2.5
+                sm:py-3
 
                 backdrop-blur-md
-
                 shadow-sm
+
+                max-w-full
               "
             >
-
               <span
                 className="
+                  flex-shrink-0
+
                   w-2
                   h-2
+
                   rounded-full
 
                   bg-[#b49a32]
@@ -384,17 +434,18 @@ export default function ContactUs() {
 
               <span
                 className="
-                  text-sm
+                  text-xs
+                  sm:text-sm
+
                   text-[#173b2e]/75
+
+                  whitespace-nowrap
                 "
               >
                 We would love to hear from you
               </span>
-
             </motion.div>
-
           </motion.div>
-
 
           {/* =================================================
               RIGHT SIDE FORM
@@ -418,24 +469,28 @@ export default function ContactUs() {
               delay: 0.1,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="relative"
+            className="
+              relative
+              w-full
+            "
           >
-
             {/* Form glow */}
 
             <div
               className="
                 absolute
-                inset-4
+                inset-3
+                sm:inset-4
 
-                rounded-[32px]
+                rounded-[24px]
+                sm:rounded-[32px]
 
                 bg-[#b49a32]/10
 
-                blur-[45px]
+                blur-[35px]
+                sm:blur-[45px]
               "
             />
-
 
             {/* =================================================
                 GLASS FORM
@@ -445,7 +500,8 @@ export default function ContactUs() {
               className="
                 relative
 
-                rounded-[28px]
+                rounded-[22px]
+                sm:rounded-[28px]
 
                 border
                 border-[#173b2e]/15
@@ -454,20 +510,20 @@ export default function ContactUs() {
 
                 backdrop-blur-xl
 
-                p-5
+                p-4
                 sm:p-7
                 lg:p-9
 
                 shadow-[0_25px_80px_rgba(23,59,46,0.10)]
               "
             >
-
               {/* Top golden shine */}
 
               <div
                 className="
                   absolute
                   top-0
+
                   left-[15%]
                   right-[15%]
 
@@ -480,17 +536,16 @@ export default function ContactUs() {
                 "
               />
 
-
               {/* Form heading */}
 
-              <div className="mb-7">
-
+              <div className="mb-5 sm:mb-7">
                 <h3
                   className="
                     font-serif
 
-                    text-2xl
-                    sm:text-3xl
+                    text-xl
+                    sm:text-2xl
+                    md:text-3xl
 
                     text-[#173b2e]
                   "
@@ -500,9 +555,13 @@ export default function ContactUs() {
 
                 <p
                   className="
-                    mt-2
+                    mt-1.5
+                    sm:mt-2
 
-                    text-sm
+                    text-xs
+                    sm:text-sm
+
+                    leading-6
 
                     text-[#173b2e]/55
                   "
@@ -510,24 +569,18 @@ export default function ContactUs() {
                   Fill in your details and our team will
                   get back to you.
                 </p>
-
               </div>
 
-
-              <form className="space-y-4">
-
+              <form className="space-y-3.5 sm:space-y-4">
                 {/* NAME */}
 
                 <motion.div {...inputAnimation}>
-
                   <InputField
-                    icon={<User size={19} />}
+                    icon={<User size={18} />}
                     placeholder="Your Name"
                     type="text"
                   />
-
                 </motion.div>
-
 
                 {/* PHONE */}
 
@@ -538,15 +591,12 @@ export default function ContactUs() {
                     delay: 0.05,
                   }}
                 >
-
                   <InputField
-                    icon={<Phone size={19} />}
+                    icon={<Phone size={18} />}
                     placeholder="Phone Number"
                     type="tel"
                   />
-
                 </motion.div>
-
 
                 {/* EMAIL */}
 
@@ -557,15 +607,12 @@ export default function ContactUs() {
                     delay: 0.1,
                   }}
                 >
-
                   <InputField
-                    icon={<Mail size={19} />}
+                    icon={<Mail size={18} />}
                     placeholder="Email Address"
                     type="email"
                   />
-
                 </motion.div>
-
 
                 {/* SUBJECT */}
 
@@ -576,15 +623,12 @@ export default function ContactUs() {
                     delay: 0.15,
                   }}
                 >
-
                   <InputField
-                    icon={<Pencil size={19} />}
+                    icon={<Pencil size={18} />}
                     placeholder="Subject"
                     type="text"
                   />
-
                 </motion.div>
-
 
                 {/* MESSAGE */}
 
@@ -596,13 +640,16 @@ export default function ContactUs() {
                   }}
                   className="relative"
                 >
-
                   <MessageSquare
-                    size={19}
+                    size={18}
                     className="
                       absolute
-                      left-4
-                      top-4
+
+                      left-3.5
+                      sm:left-4
+
+                      top-3.5
+                      sm:top-4
 
                       text-[#173b2e]/45
                     "
@@ -616,18 +663,24 @@ export default function ContactUs() {
 
                       resize-none
 
-                      rounded-2xl
+                      rounded-xl
+                      sm:rounded-2xl
 
                       border
                       border-[#173b2e]/10
 
                       bg-white/[0.16]
 
-                      px-12
-                      py-4
+                      px-11
+                      sm:px-12
+
+                      py-3.5
+                      sm:py-4
 
                       text-sm
                       sm:text-base
+
+                      leading-6
 
                       text-[#173b2e]
 
@@ -646,41 +699,42 @@ export default function ContactUs() {
                       focus:ring-[#b49a32]/10
                     "
                   />
-
                 </motion.div>
-
 
                 {/* SUBMIT */}
 
                 <motion.button
                   type="submit"
-
                   whileHover={{
                     scale: 1.02,
                   }}
-
                   whileTap={{
                     scale: 0.97,
                   }}
-
                   className="
                     group
 
-                    mt-2
+                    mt-1
 
                     flex
                     w-full
 
                     items-center
                     justify-center
-                    gap-3
 
-                    rounded-2xl
+                    gap-2
+                    sm:gap-3
+
+                    rounded-xl
+                    sm:rounded-2xl
 
                     bg-[#bfc94b]
 
-                    px-6
-                    py-4
+                    px-5
+                    sm:px-6
+
+                    py-3.5
+                    sm:py-4
 
                     text-sm
                     sm:text-base
@@ -702,11 +756,10 @@ export default function ContactUs() {
                     hover:shadow-[0_15px_35px_rgba(191,201,75,0.30)]
                   "
                 >
-
                   Send Message
 
                   <ArrowRight
-                    size={19}
+                    size={18}
                     className="
                       transition-transform
                       duration-300
@@ -714,23 +767,15 @@ export default function ContactUs() {
                       group-hover:translate-x-1
                     "
                   />
-
                 </motion.button>
-
               </form>
-
             </div>
-
           </motion.div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
-
 
 /* ============================================================
    INPUT COMPONENT
@@ -743,11 +788,15 @@ function InputField({
 }) {
   return (
     <div className="relative">
+      {/* Icon */}
 
       <div
         className="
           absolute
-          left-4
+
+          left-3.5
+          sm:left-4
+
           top-1/2
 
           -translate-y-1/2
@@ -760,22 +809,27 @@ function InputField({
         {icon}
       </div>
 
+      {/* Input */}
+
       <input
         type={type}
         placeholder={placeholder}
-
         className="
           w-full
 
-          rounded-2xl
+          rounded-xl
+          sm:rounded-2xl
 
           border
           border-[#173b2e]/10
 
           bg-white/[0.16]
 
-          px-12
-          py-4
+          px-11
+          sm:px-12
+
+          py-3.5
+          sm:py-4
 
           text-sm
           sm:text-base
@@ -797,7 +851,7 @@ function InputField({
           focus:ring-[#b49a32]/10
         "
       />
-
     </div>
   );
 }
+

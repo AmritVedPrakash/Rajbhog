@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -10,37 +11,57 @@ export default function About() {
       className="
         relative
         w-full
-        min-h-screen
+        min-h-[calc(100vh-80px)]
         overflow-hidden
         bg-white
         flex
         items-center
+        pt-24
+        sm:pt-28
+        lg:pt-32
+        pb-10
+        sm:pb-14
+        lg:pb-16
       "
     >
       {/* =========================================
           BACKGROUND DECORATION
       ========================================== */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Top Left Glow */}
         <div
           className="
             absolute
-            -top-40
-            -left-40
-            w-[500px]
-            h-[500px]
+            -top-32
+            -left-32
+            sm:-top-40
+            sm:-left-40
+            w-[280px]
+            h-[280px]
+            sm:w-[400px]
+            sm:h-[400px]
+            lg:w-[500px]
+            lg:h-[500px]
             rounded-full
             bg-[#c9d34f]/10
             blur-3xl
           "
         />
 
+        {/* Bottom Right Glow */}
         <div
           className="
             absolute
-            -bottom-40
-            -right-40
-            w-[500px]
-            h-[500px]
+            -bottom-32
+            -right-32
+            sm:-bottom-40
+            sm:-right-40
+            w-[280px]
+            h-[280px]
+            sm:w-[400px]
+            sm:h-[400px]
+            lg:w-[500px]
+            lg:h-[500px]
             rounded-full
             bg-[#b08b2c]/10
             blur-3xl
@@ -61,8 +82,6 @@ export default function About() {
           px-5
           sm:px-8
           lg:px-12
-          py-16
-          lg:py-20
         "
       >
         <div
@@ -71,7 +90,8 @@ export default function About() {
             grid-cols-1
             lg:grid-cols-2
             items-center
-            gap-12
+            gap-8
+            sm:gap-10
             lg:gap-20
           "
         >
@@ -104,18 +124,22 @@ export default function About() {
                 items-center
                 justify-center
                 lg:justify-start
-                gap-3
-                mb-5
+                gap-2
+                sm:gap-3
+                mb-4
+                sm:mb-5
               "
             >
-              <span className="w-10 h-[2px] bg-[#b08b2c]" />
+              <span className="w-7 sm:w-10 h-[2px] bg-[#b08b2c]" />
 
               <span
                 className="
-                  text-sm
-                  sm:text-base
+                  text-xs
+                  sm:text-sm
+                  md:text-base
                   font-semibold
-                  tracking-[0.25em]
+                  tracking-[0.18em]
+                  sm:tracking-[0.25em]
                   uppercase
                   text-[#b08b2c]
                 "
@@ -123,18 +147,19 @@ export default function About() {
                 About Rajbhog
               </span>
 
-              <span className="w-10 h-[2px] bg-[#b08b2c] lg:hidden" />
+              <span className="w-7 sm:w-10 h-[2px] bg-[#b08b2c] lg:hidden" />
             </div>
 
             {/* Main heading */}
             <h1
               className="
                 font-serif
-                text-4xl
+                text-[2.2rem]
+                leading-[1.08]
                 sm:text-5xl
+                md:text-6xl
                 lg:text-6xl
                 xl:text-7xl
-                leading-[1.05]
                 font-medium
                 text-[#193d2f]
               "
@@ -153,31 +178,37 @@ export default function About() {
                 items-center
                 justify-center
                 lg:justify-start
-                gap-3
-                my-7
+                gap-2
+                sm:gap-3
+                my-5
+                sm:my-7
               "
             >
-              <span className="w-16 h-[1px] bg-[#b08b2c]" />
+              <span className="w-10 sm:w-16 h-[1px] bg-[#b08b2c]" />
 
               <span
                 className="
-                  w-2
-                  h-2
+                  w-1.5
+                  h-1.5
+                  sm:w-2
+                  sm:h-2
                   rotate-45
                   bg-[#b08b2c]
                 "
               />
 
-              <span className="w-16 h-[1px] bg-[#b08b2c]" />
+              <span className="w-10 sm:w-16 h-[1px] bg-[#b08b2c]" />
             </div>
 
             {/* Paragraph */}
             <p
               className="
-                text-base
-                sm:text-lg
+                text-sm
+                sm:text-base
+                md:text-lg
                 lg:text-xl
-                leading-8
+                leading-7
+                sm:leading-8
                 text-slate-600
                 max-w-2xl
                 mx-auto
@@ -193,11 +224,14 @@ export default function About() {
 
             <p
               className="
-                mt-5
-                text-base
-                sm:text-lg
+                mt-4
+                sm:mt-5
+                text-sm
+                sm:text-base
+                md:text-lg
                 lg:text-xl
-                leading-8
+                leading-7
+                sm:leading-8
                 text-slate-600
                 max-w-2xl
                 mx-auto
@@ -230,22 +264,30 @@ export default function About() {
                 duration: 0.7,
               }}
               className="
-                mt-8
+                mt-6
+                sm:mt-8
                 inline-flex
                 items-center
-                gap-3
+                gap-2
+                sm:gap-3
                 rounded-full
                 border
                 border-[#b08b2c]/30
                 bg-[#b08b2c]/5
-                px-5
-                py-3
+                px-4
+                sm:px-5
+                py-2.5
+                sm:py-3
+                max-w-full
               "
             >
               <span
                 className="
-                  w-2.5
-                  h-2.5
+                  flex-shrink-0
+                  w-2
+                  h-2
+                  sm:w-2.5
+                  sm:h-2.5
                   rounded-full
                   bg-[#b08b2c]
                   animate-pulse
@@ -254,10 +296,12 @@ export default function About() {
 
               <span
                 className="
-                  text-sm
-                  sm:text-base
+                  text-xs
+                  sm:text-sm
+                  md:text-base
                   font-semibold
                   text-[#193d2f]
+                  whitespace-nowrap
                 "
               >
                 Purity • Aroma • Heritage
@@ -272,26 +316,30 @@ export default function About() {
             className="
               relative
               w-full
-              min-h-[400px]
-              sm:min-h-[500px]
-              lg:min-h-[620px]
+              min-h-[300px]
+              sm:min-h-[400px]
+              md:min-h-[480px]
+              lg:min-h-[600px]
               flex
               items-center
               justify-center
+              mt-2
+              sm:mt-4
+              lg:mt-0
             "
           >
             {/* =================================
-                DECORATIVE RINGS
-                These DON'T rotate
+                DECORATIVE OUTER RING
             ================================== */}
-
             <div
               className="
                 absolute
-                w-[280px]
-                h-[280px]
-                sm:w-[400px]
-                sm:h-[400px]
+                w-[230px]
+                h-[230px]
+                sm:w-[340px]
+                sm:h-[340px]
+                md:w-[420px]
+                md:h-[420px]
                 lg:w-[520px]
                 lg:h-[520px]
                 rounded-full
@@ -300,13 +348,18 @@ export default function About() {
               "
             />
 
+            {/* =================================
+                DECORATIVE INNER RING
+            ================================== */}
             <div
               className="
                 absolute
-                w-[220px]
-                h-[220px]
-                sm:w-[330px]
-                sm:h-[330px]
+                w-[180px]
+                h-[180px]
+                sm:w-[280px]
+                sm:h-[280px]
+                md:w-[350px]
+                md:h-[350px]
                 lg:w-[430px]
                 lg:h-[430px]
                 rounded-full
@@ -318,11 +371,10 @@ export default function About() {
             {/* =================================
                 IMAGE ENTRY ANIMATION
             ================================== */}
-
             <motion.div
               initial={{
                 opacity: 0,
-                x: 180,
+                x: 120,
                 scale: 0.7,
               }}
               whileInView={{
@@ -341,10 +393,11 @@ export default function About() {
               className="
                 relative
                 z-10
-                w-[85%]
-                sm:w-[75%]
-                lg:w-[90%]
-                xl:w-[95%]
+                w-[78%]
+                sm:w-[72%]
+                md:w-[70%]
+                lg:w-[88%]
+                xl:w-[94%]
                 max-w-[620px]
                 flex
                 items-center
@@ -354,7 +407,6 @@ export default function About() {
               {/* =================================
                   ONLY IMAGE ROTATES
               ================================== */}
-
               <motion.img
                 src={RiceImage}
                 alt="Premium Rajbhog Basmati Rice"
@@ -383,3 +435,4 @@ export default function About() {
     </section>
   );
 }
+

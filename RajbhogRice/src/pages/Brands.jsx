@@ -678,6 +678,17 @@ function BrandDetailsModal({ brand, onClose }) {
 // =====================================================
 
 function BrandCard({ brand, index, onClick }) {
+  const [isTouched, setIsTouched] = useState(false);
+
+  const handleCardClick = () => {
+    setIsTouched(true);
+
+    // Small delay so user can see the color change
+    setTimeout(() => {
+      onClick();
+    }, 180);
+  };
+
   return (
     <motion.div
       initial={{
@@ -700,12 +711,12 @@ function BrandCard({ brand, index, onClick }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       className="group relative cursor-pointer"
-      onClick={onClick}
+      onClick={handleCardClick}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
-          onClick();
+          handleCardClick();
         }
       }}
     >
@@ -734,10 +745,10 @@ function BrandCard({ brand, index, onClick }) {
           lg:h-[310px]
         "
       >
-        {/* Soft Glow */}
+        {/* Glow */}
 
         <div
-          className="
+          className={`
             absolute
             bottom-6
             left-1/2
@@ -745,33 +756,45 @@ function BrandCard({ brand, index, onClick }) {
             w-44
             -translate-x-1/2
             rounded-full
-            bg-[#c5a64b]/20
             blur-3xl
             transition-all
             duration-500
+
+            ${
+              isTouched
+                ? "bg-[#a78b2d]/40 scale-125"
+                : "bg-[#c5a64b]/20"
+            }
+
             group-hover:bg-[#b69a35]/35
             group-hover:scale-125
-          "
+          `}
         />
 
         {/* Shadow */}
 
         <div
-          className="
+          className={`
             absolute
             bottom-2
             left-1/2
             h-5
-            w-28
             -translate-x-1/2
             rounded-[50%]
             bg-black/15
             blur-xl
             transition-all
             duration-500
+
+            ${
+              isTouched
+                ? "w-36 bg-black/25"
+                : "w-28"
+            }
+
             group-hover:w-36
             group-hover:bg-black/20
-          "
+          `}
         />
 
         {/* Brand Image */}
@@ -806,49 +829,69 @@ function BrandCard({ brand, index, onClick }) {
         transition={{
           duration: 0.3,
         }}
-        className="
+        className={`
           relative
           z-10
           -mt-8
           min-h-[315px]
           rounded-[28px]
           border
-          border-[#b9a24a]/30
-          bg-gradient-to-br
-          from-[#f5f3d9]
-          via-[#e9eab6]
-          to-[#dbe477]
           px-5
           pb-7
           pt-12
           text-center
-          shadow-[0_18px_50px_rgba(40,60,30,0.12)]
           transition-all
           duration-500
 
-          group-hover:border-[#a78b2d]/60
+          ${
+            isTouched
+              ? `
+                border-[#a78b2d]/70
+                from-[#e5e8b8]
+                via-[#dce2a0]
+                to-[#c6d66a]
+                shadow-[0_30px_75px_rgba(60,75,25,0.30)]
+              `
+              : `
+                border-[#b9a24a]/30
+                from-[#f5f3d9]
+                via-[#e9eab6]
+                to-[#dbe477]
+                shadow-[0_18px_50px_rgba(40,60,30,0.12)]
+              `
+          }
 
-          group-hover:from-[#eef0c8]
-          group-hover:via-[#e2e5a8]
-          group-hover:to-[#ccd96c]
+          bg-gradient-to-br
 
-          group-hover:shadow-[0_30px_75px_rgba(60,75,25,0.25)]
-        "
+          hover:border-[#a78b2d]/60
+          hover:from-[#eef0c8]
+          hover:via-[#e2e5a8]
+          hover:to-[#ccd96c]
+          hover:shadow-[0_30px_75px_rgba(60,75,25,0.25)]
+        `}
       >
-        {/* Hover Glow */}
+        {/* =====================================
+            MOBILE ACTIVE GLOW
+        ====================================== */}
 
         <div
-          className="
+          className={`
             pointer-events-none
             absolute
             inset-0
             rounded-[28px]
-            opacity-0
+            bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.7),transparent_55%)]
             transition-opacity
             duration-500
+
+            ${
+              isTouched
+                ? "opacity-100"
+                : "opacity-0"
+            }
+
             group-hover:opacity-100
-            bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.65),transparent_55%)]
-          "
+          `}
         />
 
         {/* Top Gold Line */}
@@ -874,26 +917,32 @@ function BrandCard({ brand, index, onClick }) {
         {/* Number */}
 
         <span
-          className="
+          className={`
             absolute
             left-5
             top-4
             font-serif
             text-4xl
             font-bold
-            text-[#30452e]/10
             transition-colors
             duration-500
+
+            ${
+              isTouched
+                ? "text-[#30452e]/25"
+                : "text-[#30452e]/10"
+            }
+
             group-hover:text-[#30452e]/20
-          "
+          `}
         >
           {brand.number}
         </span>
 
-        {/* Click indicator */}
+        {/* Arrow */}
 
         <div
-          className="
+          className={`
             absolute
             right-5
             top-5
@@ -903,15 +952,20 @@ function BrandCard({ brand, index, onClick }) {
             items-center
             justify-center
             rounded-full
-            bg-white/40
+            bg-white/50
             text-[#66571e]
-            opacity-0
-            translate-y-1
             transition-all
             duration-300
+
+            ${
+              isTouched
+                ? "translate-y-0 opacity-100"
+                : "translate-y-1 opacity-0"
+            }
+
             group-hover:translate-y-0
             group-hover:opacity-100
-          "
+          `}
         >
           <ArrowUpRight size={17} />
         </div>
@@ -919,24 +973,33 @@ function BrandCard({ brand, index, onClick }) {
         {/* Tag */}
 
         <div
-          className="
+          className={`
             relative
+            mb-4
             inline-flex
             items-center
             gap-2
-            mb-4
             rounded-full
             border
             border-[#b79b3c]/30
-            bg-white/35
             px-3.5
             py-1.5
             transition-all
             duration-300
+
+            ${
+              isTouched
+                ? "bg-white/65"
+                : "bg-white/35"
+            }
+
             group-hover:bg-white/55
-          "
+          `}
         >
-          <Sparkles size={13} className="text-[#947522]" />
+          <Sparkles
+            size={13}
+            className="text-[#947522]"
+          />
 
           <span
             className="
@@ -955,18 +1018,24 @@ function BrandCard({ brand, index, onClick }) {
         {/* Title */}
 
         <h3
-          className="
+          className={`
             relative
             mb-3
             font-serif
             text-2xl
             font-semibold
-            text-[#263c29]
             transition-colors
             duration-300
-            group-hover:text-[#1f3525]
             sm:text-[27px]
-          "
+
+            ${
+              isTouched
+                ? "text-[#1e3524]"
+                : "text-[#263c29]"
+            }
+
+            group-hover:text-[#1f3525]
+          `}
         >
           {brand.name}
         </h3>
