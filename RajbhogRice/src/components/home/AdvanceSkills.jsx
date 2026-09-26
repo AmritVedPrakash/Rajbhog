@@ -242,26 +242,7 @@ export default function AdvanceSkills() {
                 </p>
 
                 {/* Bottom Arrow */}
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-2
-                    mt-6
-                    text-[#d8bd62]
-                    text-sm
-                    font-semibold
-                    opacity-0
-                    translate-y-2
-                    transition-all
-                    duration-300
-                    group-hover:opacity-100
-                    group-hover:translate-y-0
-                  "
-                >
-                  <span>Discover More</span>
-                  <ArrowRight size={17} />
-                </div>
+                
               </div>
             );
           })}
