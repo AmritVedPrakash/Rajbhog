@@ -17,9 +17,10 @@ import {
 // =====================================================
 // Images:
 // ../../assets/brand/sriKhand/
+import PremiumBasmati from "../../assets/brand/srikhand/premium-basmati.png"
+import ExcellentBasmati from "../../assets/brand/srikhand/excellent-basmati.png"
 
-import ExcellentBasmati from "../../assets/brand/sriKhand/excellent-basmati.png";
-import PremiumBasmati from "../../assets/brand/sriKhand/premium-basmati.png";
+
 
 // =====================================================
 // PRODUCT DATA
