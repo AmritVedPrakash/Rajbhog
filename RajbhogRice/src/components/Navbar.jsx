@@ -13,6 +13,7 @@ function Navbar() {
     { name: "Home", to: "/" },
     { name: "About", to: "/about-us" },
     { name: "Brands", to: "/brands" },
+    { name: "Product Range", to: "/product-range" },
     { name: "Contact Us", to: "/contact-us" },
   ];
 
