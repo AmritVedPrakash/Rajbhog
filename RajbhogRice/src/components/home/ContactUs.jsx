@@ -220,6 +220,51 @@ export default function ContactUs() {
               LEFT SIDE
           ================================================= */}
 
+{/* Product Enquiry Highlight */}
+<motion.div
+  initial={{ opacity: 0, y: 12 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.3 }}
+  transition={{ duration: 0.6 }}
+  className="mb-4 sm:mb-5"
+>
+  <span
+    className="
+      inline-flex items-center gap-2
+      rounded-full
+      border border-[#b49a32]/40
+      bg-gradient-to-r from-[#b49a32]/15 to-[#c8ad46]/5
+      px-4 py-2
+      text-xs sm:text-sm
+      font-bold
+      tracking-wide
+      text-[#173b2e]
+      shadow-[0_4px_18px_rgba(180,154,50,0.12)]
+    "
+  >
+    <Sparkles
+      size={16}
+      className="text-[#b49a32]"
+    />
+    Enquire About Products
+  </span>
+</motion.div>
+
+{/* Existing Contact Us Label */}
+<div
+  className="
+    flex
+    items-center
+    justify-center
+    lg:justify-start
+    gap-2
+    mb-4
+    sm:mb-5
+  "
+>
+  
+</div>
+
           <motion.div
             initial={{
               opacity: 0,

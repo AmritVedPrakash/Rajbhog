@@ -11,6 +11,7 @@ import {
   Wheat,
   X,
 } from "lucide-react";
+import RelatedBrandProducts from "./RelatedBrandProducts.jsx";
 
 // ─────────────────────────────────────────────
 // Product Images — Tehzeeb
@@ -380,6 +381,7 @@ const ProductCard = ({ product, onViewProduct }) => {
 // ─────────────────────────────────────────────
 export default function TehzeebProductType() {
   const [selectedProduct, setSelectedProduct] = React.useState(null);
+  const modalContentRef = React.useRef(null);
 
   React.useEffect(() => {
     if (!selectedProduct) return undefined;
@@ -396,6 +398,12 @@ export default function TehzeebProductType() {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
+  }, [selectedProduct]);
+
+  React.useEffect(() => {
+    if (selectedProduct) {
+      modalContentRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, [selectedProduct]);
 
   return (
@@ -574,6 +582,7 @@ export default function TehzeebProductType() {
             />
 
             <motion.div
+              ref={modalContentRef}
               initial={{ opacity: 0, y: 50, scale: 0.92 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 40, scale: 0.94 }}
@@ -771,6 +780,12 @@ export default function TehzeebProductType() {
                   )}
                 </div>
               </div>
+              <RelatedBrandProducts
+                products={products}
+                selectedProduct={selectedProduct}
+                brandName="Tehzeeb"
+                onSelect={setSelectedProduct}
+              />
             </motion.div>
           </motion.div>
         )}
