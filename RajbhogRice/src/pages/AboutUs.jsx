@@ -8,8 +8,8 @@ export default function AboutUs() {
     <main className="pt-[76px] sm:pt-[82px]">
       <Founder />
       <Contents />
-      <OurBrandCategories/>
-      <About />
+      {/* <OurBrandCategories/>
+      <About /> */}
 
       {/* <WhereBuy/> */}
     </main>

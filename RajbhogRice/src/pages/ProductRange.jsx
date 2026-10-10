@@ -8,6 +8,7 @@ import BiryaniproductType from "../components/brand/BiryaniproductType.jsx";
 import TehzeebProductType from "../components/brand/TehzeebProductType.jsx";
 import HukumatProtuctType from "../components/brand/HukumatProtuctType.jsx";
 import Khazana from "../components/brand/Khazana.jsx";
+import FlagshipBrand from "../components/brand/FlagshipBrand.jsx";
 
 export default function ProductRange() {
   return (
@@ -22,6 +23,7 @@ export default function ProductRange() {
       <TehzeebProductType />
       <HukumatProtuctType />
       <Khazana />
+      <FlagshipBrand/>
     </>
   );
 }

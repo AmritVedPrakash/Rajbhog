@@ -6,7 +6,9 @@ import {
   Leaf,
   Crown,
   Layers3,
+  PackageCheck,
   Star,
+  Wheat,
 } from "lucide-react";
 
 const MotionLink = motion.create(Link);
@@ -18,6 +20,7 @@ const categories = [
     to: "/brands/flagship-brands",
     subtitle: "Our Core Brand Portfolio",
     icon: Crown,
+    linkIcon: Crown,
     description:
       "Our Flagship Brands represent the core of our rice portfolio, bringing together established brands with carefully defined product ranges and distinct market identities.",
     points: [
@@ -27,6 +30,8 @@ const categories = [
       "Premium and everyday choices",
     ],
     buttonText: "Explore Flagship Brands",
+    linkDescription:
+      "Discover our leading rice brands and their complete product ranges.",
   },
   {
     id: "02",
@@ -34,6 +39,7 @@ const categories = [
     to: "/brands/signature-rice-collection",
     subtitle: "Our Distinctive Rice Collection",
     icon: Layers3,
+    linkIcon: Wheat,
     description:
       "Our Signature Collection brings together a diverse selection of distinctive rice brands, created to serve different preferences, occasions and consumer needs.",
     points: [
@@ -43,11 +49,14 @@ const categories = [
       "Everyday and special choices",
     ],
     buttonText: "Explore Signature Collection",
+    linkDescription:
+      "Explore distinctive rice brands for every preference and occasion.",
   },
 ];
 
 const CategoryCard = ({ category }) => {
   const Icon = category.icon;
+  const LinkIcon = category.linkIcon;
 
   return (
     <motion.div
@@ -91,6 +100,8 @@ const CategoryCard = ({ category }) => {
       <div
         className="
           relative
+          flex
+          flex-col
           min-h-[500px]
           overflow-hidden
           rounded-[32px]
@@ -248,7 +259,7 @@ const CategoryCard = ({ category }) => {
         </p>
 
         {/* Points */}
-        <div className="relative z-10 mt-6 space-y-3">
+        <div className="relative z-10 mt-6 mb-8 space-y-3">
           {category.points.map((point, index) => (
             <div
               key={index}
@@ -279,29 +290,41 @@ const CategoryCard = ({ category }) => {
         {/* Button */}
         <MotionLink
           to={category.to}
-          whileHover={{
-            scale: 1.03,
-          }}
-          whileTap={{
-            scale: 0.97,
-          }}
           className="
             relative z-10
-            mt-8
-            flex items-center gap-2
-            rounded-full
-            bg-[#284934]
-            px-5 py-3
-            text-xs
-            font-semibold
-            text-[#ead78b]
-            shadow-[0_8px_20px_rgba(40,73,52,0.18)]
+            mt-auto
+            flex min-h-[104px] items-center gap-4
+            rounded-2xl             border border-[#b9a24a]/30
+            bg-[#faf9f0] px-4 py-4
+            shadow-[0_8px_24px_rgba(40,60,30,0.10)]
             transition-all duration-300
-            hover:bg-[#1f3828]
+            hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(40,60,30,0.16)]
+            focus-visible:outline focus-visible:outline-2
+            focus-visible:outline-offset-4 focus-visible:outline-[#284934]
+            sm:px-5
           "
         >
-          {category.buttonText}
-          <ArrowUpRight size={15} />
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#c99b4a] text-white sm:h-14 sm:w-14">
+            <LinkIcon size={25} strokeWidth={1.8} />
+          </span>
+
+          <span className="min-w-0 flex-1">
+            <span className="mb-1 flex items-center gap-2">
+              <span className="text-[10px] font-semibold text-[#b18a43] sm:text-xs">
+                {category.id}
+              </span>
+              <span className="text-sm font-semibold leading-snug text-[#284934] sm:text-base">
+                {category.buttonText}
+              </span>
+            </span>
+            <span className="block text-xs leading-relaxed text-[#536053] sm:text-sm">
+              {category.linkDescription}
+            </span>
+          </span>
+
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#284934] text-[#ead78b] transition-colors group-hover:bg-[#1f3828] sm:h-10 sm:w-10">
+            <ArrowUpRight size={18} />
+          </span>
         </MotionLink>
       </div>
     </motion.div>
@@ -430,6 +453,62 @@ export default function OurBrandCategories() {
             />
           ))}
         </div>
+
+        {/* ───────────────── Premium Packaging ───────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.65 }}
+          className="
+            relative mt-8 overflow-hidden rounded-[28px]
+            border border-[#b9a24a]/25 bg-[#203d31]
+            px-6 py-7 text-white shadow-[0_20px_55px_rgba(32,61,49,0.16)]
+            sm:mt-10 sm:rounded-[32px] sm:px-9 sm:py-9
+            lg:px-10 lg:py-10
+          "
+        >
+          <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full border border-white/10" />
+          <div className="pointer-events-none absolute -right-8 -top-12 h-40 w-40 rounded-full border border-white/10" />
+
+          <div className="relative z-10 grid gap-7 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10">
+            <div>
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#c9d34f] text-[#203d31] shadow-lg shadow-black/10">
+                <PackageCheck size={27} strokeWidth={1.8} />
+              </div>
+
+              <h3 className="font-serif text-3xl font-semibold sm:text-4xl">
+                Premium Packaging
+              </h3>
+
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-white/80 sm:text-base">
+                We offer three rice variants across Premium and Special
+                qualities, packed in tamper- and moisture-proof packaging with
+                advanced nitrogen flushing to help preserve freshness.
+              </p>
+            </div>
+
+            <div className="lg:min-w-[260px]">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#dbe477]">
+                Available pack sizes
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                {["1 kg", "5 kg", "20 kg", "35 kg"].map((size) => (
+                  <span
+                    key={size}
+                    className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-white"
+                  >
+                    {size}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-4 max-w-sm text-xs leading-5 text-white/65 sm:text-sm">
+                Consumer packs are also available in 1 kg and 5 kg sizes,
+                based on demand.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
         {/* ───────────────── Bottom Statement ───────────────── */}
         <motion.div

@@ -24,6 +24,7 @@ import SignatureRiceCollection from "./components/signature/SignatureRiceCollect
 
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+import WhatsAppButton from "./components/WhatsAppButton.jsx";
 
 function App() {
   const { pathname } = useLocation();
@@ -74,6 +75,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
